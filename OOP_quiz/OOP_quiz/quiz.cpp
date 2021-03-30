@@ -1,4 +1,5 @@
 #include<iostream>
+#include<cctype>
 //quiz 1
 int countMatchedNumberLetterInString(const char *str, int digit)
 {
@@ -40,28 +41,26 @@ void excludeRedundantLetters(char* str)
 	str[strlen(space)] = '\0';
 }
 
-/*int countWords(const char* str)
+int countWords(const char* str)
 {
 	int count = 0;
-	for (; *str != '\0'; str++)
+	for (int i = 0 ; i < strlen(str); i++)
 	{
-		if (*str != 32 && *str != 10)
-			str++;
-		if(*)
+		if(isspace(*(str+i)) && !isspace(*(str+i+1)))
 			count++;
 	}
 	return count;
-}*/
+}
 
 void main()
 {
 	//int count = countMatchedNumberLetterInString("11122233333444555", 3);
 	//printf("%d", count);
-	char data[100]{ "Hello World" };
-	excludeRedundantLetters(data);
-	printf("%s", data);
-	//int count2 = countWords("Hello World, Here is train\n");
-	//printf("%d", count2);
+	//char data[100]{ "Hello World" };
+	//excludeRedundantLetters(data);
+	//printf("%s", data);
+	int count2 = countWords("Hello World, Here is train\n");
+	printf("%d", count2);
 
 	return;
 }
