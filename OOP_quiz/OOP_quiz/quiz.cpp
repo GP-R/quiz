@@ -40,7 +40,7 @@ void excludeRedundantLetters(char* str)
 	}
 	str[strlen(space)] = '\0';
 }
-
+//quiz 3
 int countWords(const char* str)
 {
 	int count = 0;
@@ -51,6 +51,21 @@ int countWords(const char* str)
 	}
 	return count;
 }
+// quiz4
+bool examinePairedParenthesis(const char* str)
+{
+	int count = 0;
+	for (; *str != '\0'; str++)
+	{
+		if (*str == 40) // '(' 40
+			count++;
+		if (*str == 41) // ')' 41
+			count--;
+	}
+	if(count==0)
+		return true;
+	return false;
+}
 
 void main()
 {
@@ -59,8 +74,9 @@ void main()
 	//char data[100]{ "Hello World" };
 	//excludeRedundantLetters(data);
 	//printf("%s", data);
-	int count2 = countWords("Hello World, Here is train\n");
-	printf("%d", count2);
-
+	//int count2 = countWords("Hello World, Here is train\n");
+	//printf("%d", count2);
+	bool result = examinePairedParenthesis("((()))"); // 40 41
+	printf("%s", result == true ? "true" : "false");
 	return;
 }
